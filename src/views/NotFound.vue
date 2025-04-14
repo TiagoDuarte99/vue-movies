@@ -12,9 +12,8 @@
 </template>
 
 <script setup>
-// Não é necessário adicionar lógica aqui, apenas exibir a mensagem de erro.
+
 </script>
 
 <style scoped>
-/* Não é necessário adicionar mais estilos com Tailwind CSS */
 </style>

@@ -14,19 +14,20 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { defineProps } from 'vue';
+import type { Movie } from '@/models/Movie';
 
-// Propriedades do filme
-const props = defineProps({
-  movie: {
-    type: Object,
-    required: true,
-  },
-});
+defineProps < {
+  movie: Movie;
+} > ();
 
-const formatDate = (dateString) => {
-  const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+const formatDate = (dateString: string | number | Date) => {
+  const options: Intl.DateTimeFormatOptions = {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  };
   const date = new Date(dateString);
   return date.toLocaleDateString('pt-PT', options);
 };

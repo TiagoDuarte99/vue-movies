@@ -13,27 +13,47 @@
         <span v-if="hasSubmenu" class="pi pi-fw pi-angle-down"></span>
       </a>
     </template>
+    <template #end>
+      <div class="top-0 w-full flex gap-2 sm:gap-6">
+        <FloatLabel variant="on" class="sm:w-auto w-full">
+          <IconField>
+            <InputIcon class="pi pi-search" />
+            <InputText id="on_label" v-model="search" autocomplete="off" class="sm:w-auto w-full" />
+          </IconField>
+          <label for="on_label">Search</label>
+        </FloatLabel>
+        <Button icon="pi pi-search" aria-label="Search" class="sm:text-base text-sm" @click="shearchMovie()"></Button>
+      </div>
+    </template>
   </Menubar>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const items = ref([
-{
-  label: 'Polular Movies',
-  icon: 'pi pi-star',
-  route: '/'
-},
-{
-  label: 'Top Movies',
-  icon: 'pi pi-trophy',
-  route: '/topmovies'
-
-},
+  {
+    label: 'Popular Movies',
+    icon: 'pi pi-star',
+    route: '/'
+  },
+  {
+    label: 'Top Movies',
+    icon: 'pi pi-trophy',
+    route: '/topmovies'
+  },
 ]);
+
+const search = ref('');
+
+const shearchMovie = async () => {
+  if (!search.value.trim()) return;
+  console.log()
+  router.push({ name: 'ShearchMovie', query: { q: search.value } });
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

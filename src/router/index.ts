@@ -3,6 +3,7 @@ import PopularMovies from "@/views/PopularMovies.vue";
 import MovieDetail from "@/views/MovieDetail.vue";
 import TopMovies from "@/views/TopMovies.vue";
 import NotFound from "@/views/NotFound.vue";
+import ShearchMovie from "@/views/ShearchMovie.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,6 +17,11 @@ const router = createRouter({
       path: "/topmovies",
       name: "TopMovies",
       component: TopMovies,
+    },
+    {
+      path: "/shearchmovie",
+      name: "ShearchMovie",
+      component: ShearchMovie,
     },
     {
       path: "/movie/:id",

@@ -15,7 +15,7 @@
       <!-- Imagem -->
       <div class="w-full md:w-1/3">
         <img :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="Poster"
-          class="w-full rounded-lg shadow-lg" />
+          class="w-full rounded-lg shadow-lg hover:scale-105 transition duration-300 ease-in-out" />
       </div>
     </div>
   </div>
